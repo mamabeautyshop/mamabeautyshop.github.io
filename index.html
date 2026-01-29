@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Mama Beauty</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       margin: 0;
@@ -12,41 +13,73 @@
       color: #333;
       text-align: center;
     }
+
     header {
       background: #000;
       color: #fff;
       padding: 40px 20px;
     }
+
     header h1 {
       margin: 0;
       font-size: 40px;
       letter-spacing: 2px;
     }
+
     header p {
       font-size: 18px;
       margin-top: 10px;
     }
-    section {
+
+    main {
       padding: 40px 20px;
     }
+
     .btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 15px 30px;
       background: #000;
       color: #fff;
-      text-decoration: none;
+      padding: 15px 25px;
       border-radius: 30px;
-      font-size: 18px;
+      text-decoration: none;
+      margin-top: 20px;
     }
-    .btn:hover {
-      background: #444;
+
+    .products {
+      margin-top: 60px;
     }
+
+    .products h2 {
+      margin-bottom: 30px;
+    }
+
+    .product {
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 320px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .product h3 {
+      margin: 15px 0 5px;
+    }
+
+    .product p {
+      font-weight: bold;
+    }
+
     footer {
-      background: #111;
+      background: #000;
       color: #fff;
       padding: 20px;
-      font-size: 14px;
+      margin-top: 60px;
     }
   </style>
 </head>
@@ -58,17 +91,41 @@
     <p>Natural Beauty • Self Care • Confidence</p>
   </header>
 
-  <section>
+  <main>
     <h2>Byenvini lakay Mama Beauty 💄</h2>
     <p>
-      Nou ofri pwodui bote natirèl pou swen po ak cheve.  
+      Nou ofri pwodui bote natirèl pou swen po ak cheve.<br>
       Bote w merite pi bon an ✨
     </p>
 
-    <a class="btn" href="https://wa.me/1XXXXXXXXXX">
+    <a class="btn" href="https://wa.me/509XXXXXXXX">
       Kontakte nou sou WhatsApp
     </a>
-  </section>
+
+    <!-- MACHANDIZ YO -->
+    <section class="products">
+      <h2>Machandiz Nou Yo</h2>
+
+      <div class="product">
+        <img src="huile.jpg" alt="Huile Cheveux">
+        <h3>Huile Natirèl Cheveux</h3>
+        <p>$15</p>
+        <a class="btn" href="https://wa.me/509XXXXXXXX">
+          Achte sou WhatsApp
+        </a>
+      </div>
+
+      <div class="product">
+        <img src="savon.jpg" alt="Savon Naturel">
+        <h3>Savon Natirèl Po</h3>
+        <p>$8</p>
+        <a class="btn" href="https://wa.me/509XXXXXXXX">
+          Achte sou WhatsApp
+        </a>
+      </div>
+
+    </section>
+  </main>
 
   <footer>
     © 2026 Mama Beauty • Tout dwa rezève
