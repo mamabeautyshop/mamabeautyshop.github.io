@@ -1,135 +1,195 @@
 <!DOCTYPE html>
-<html lang="ht">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Mama Beauty</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Mama Beauty | Luxury Beauty & Fashion</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff0f5;
-      color: #333;
-      text-align: center;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    header {
-      background: #000;
-      color: #fff;
-      padding: 40px 20px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 40px;
-      letter-spacing: 2px;
-    }
-
-    header p {
-      font-size: 18px;
-      margin-top: 10px;
-    }
-
-    main {
-      padding: 40px 20px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #000;
-      color: #fff;
-      padding: 15px 25px;
-      border-radius: 30px;
-      text-decoration: none;
-      margin-top: 20px;
-    }
-
-    .products {
-      margin-top: 60px;
-    }
-
-    .products h2 {
-      margin-bottom: 30px;
-    }
-
-    .product {
-      background: #fff;
-      border-radius: 15px;
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 320px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    .product img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .product h3 {
-      margin: 15px 0 5px;
-    }
-
-    .product p {
-      font-weight: bold;
-    }
-
-    footer {
-      background: #000;
-      color: #fff;
-      padding: 20px;
-      margin-top: 60px;
-    }
-  </style>
+<style>
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#fff7f4;
+  color:#333;
+}
+header{
+  background:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 15px;
+  box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
+header img{height:60px}
+select,input{
+  padding:8px 12px;
+  border-radius:20px;
+  border:1px solid #ddd;
+}
+.hero{
+  background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),url('hero.jpg') center/cover;
+  color:white;
+  text-align:center;
+  padding:80px 20px;
+}
+.hero h1{font-size:32px}
+.section{padding:40px 20px}
+.categories{text-align:center;margin-bottom:20px}
+.categories button{
+  background:#d4af37;
+  border:none;
+  padding:8px 15px;
+  margin:5px;
+  border-radius:20px;
+  cursor:pointer;
+}
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+.card{
+  background:white;
+  border-radius:15px;
+  padding:15px;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+.card img{width:100%;border-radius:10px}
+.card button{
+  background:black;
+  color:white;
+  border:none;
+  padding:10px;
+  width:100%;
+  border-radius:25px;
+  margin-top:10px;
+}
+#cart{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#d4af37;
+  padding:15px 20px;
+  border-radius:30px;
+  font-weight:bold;
+  cursor:pointer;
+}
+footer{
+  background:black;
+  color:white;
+  text-align:center;
+  padding:30px;
+}
+footer a{color:#d4af37;text-decoration:none}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>MAMA BEAUTY</h1>
-    <p>Natural Beauty • Self Care • Confidence</p>
-  </header>
+<header>
+  <img src="logo.png" alt="Mama Beauty Logo">
+  <select onchange="changeCurrency(this.value)">
+    <option value="$">$ USD</option>
+    <option value="HTG">HTG</option>
+  </select>
+</header>
 
-  <main>
-    <h2>Byenvini lakay Mama Beauty 💄</h2>
-    <p>
-      Nou ofri pwodui bote natirèl pou swen po ak cheve.<br>
-      Bote w merite pi bon an ✨
-    </p>
+<div style="padding:10px">
+<input placeholder="Search products..." onkeyup="searchProduct(this.value)" style="width:100%">
+</div>
 
-    <a class="btn" href="https://wa.me/509XXXXXXXX">
-      Kontakte nou sou WhatsApp
-    </a>
+<section class="hero">
+<h1>Luxury Beauty & Fashion for Confident Women</h1>
+</section>
 
-    <!-- MACHANDIZ YO -->
-    <section class="products">
-      <h2>Machandiz Nou Yo</h2>
+<section class="section">
+<div class="categories">
+<button onclick="filter('all')">All</button>
+<button onclick="filter('beauty')">Beauty</button>
+<button onclick="filter('fashion')">Fashion</button>
+</div>
 
-      <div class="product">
-        <img src="huile.jpg" alt="Huile Cheveux">
-        <h3>Huile Natirèl Cheveux</h3>
-        <p>$15</p>
-        <a class="btn" href="https://wa.me/509XXXXXXXX">
-          Achte sou WhatsApp
-        </a>
-      </div>
+<div class="products">
 
-      <div class="product">
-        <img src="savon.jpg" alt="Savon Naturel">
-        <h3>Savon Natirèl Po</h3>
-        <p>$8</p>
-        <a class="btn" href="https://wa.me/509XXXXXXXX">
-          Achte sou WhatsApp
-        </a>
-      </div>
+<div class="card beauty">
+<img src="hair.jpg">
+<h3>Hair Oil</h3>
+<p class="price" data-usd="25">$25</p>
+<button onclick="addToCart('Hair Oil - $25')">Add to Cart</button>
+</div>
 
-    </section>
-  </main>
+<div class="card beauty">
+<img src="skin.jpg">
+<h3>Skin Care Cream</h3>
+<p class="price" data-usd="30">$30</p>
+<button onclick="addToCart('Skin Care Cream - $30')">Add to Cart</button>
+</div>
 
-  <footer>
-    © 2026 Mama Beauty • Tout dwa rezève
-  </footer>
+<div class="card beauty">
+<img src="makeup.jpg">
+<h3>Makeup Kit</h3>
+<p class="price" data-usd="45">$45</p>
+<button onclick="addToCart('Makeup Kit - $45')">Add to Cart</button>
+</div>
+
+<div class="card fashion">
+<img src="dress.jpg">
+<h3>Luxury Dress</h3>
+<p class="price" data-usd="80">$80</p>
+<button onclick="addToCart('Luxury Dress - $80')">Add to Cart</button>
+</div>
+
+</div>
+</section>
+
+<div id="cart" onclick="checkout()">🛒 Checkout</div>
+
+<footer>
+<p>Follow us on Instagram</p>
+<a href="https://instagram.com/yourpage" target="_blank">@MamaBeauty</a>
+<p>© 2026 Mama Beauty • Luxury & Elegance</p>
+</footer>
+
+<script>
+let cart=[];
+let currency="$";
+
+function addToCart(item){
+  cart.push(item);
+  alert(item+" added to cart");
+}
+
+function checkout(){
+  if(cart.length===0){alert("Your cart is empty");return;}
+  let msg="Hello Mama Beauty,%0AI would like to order:%0A";
+  cart.forEach(i=>msg+="- "+i+"%0A");
+  window.location.href="https://wa.me/15164778676?text="+msg;
+}
+
+function filter(cat){
+  document.querySelectorAll('.card').forEach(c=>{
+    c.style.display=(cat==="all"||c.classList.contains(cat))?"block":"none";
+  });
+}
+
+function searchProduct(val){
+  val=val.toLowerCase();
+  document.querySelectorAll('.card h3').forEach(h=>{
+    h.parentElement.style.display=h.innerText.toLowerCase().includes(val)?"block":"none";
+  });
+}
+
+function changeCurrency(cur){
+  currency=cur;
+  document.querySelectorAll('.price').forEach(p=>{
+    let usd=p.dataset.usd;
+    p.innerText=cur=="$"?"$"+usd:(usd*135)+" HTG";
+  });
+}
+</script>
 
 </body>
 </html>
