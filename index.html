@@ -25,17 +25,19 @@ header{
   box-shadow:0 2px 10px rgba(0,0,0,.05);
 }
 
-/* LOGO PI GWO */
+/* LOGO GWO MEN KI ADAPTE TELEFON */
 header img{
-  height:1000px; /* Ogmante 10 fwa soti 100px */
-  max-width:2400px; /* Ogmante 10 fwa soti 240px */
+  height:250px; /* Desktop */
+  max-width:600px;
   object-fit:contain;
+  transition: all 0.3s ease; /* smooth resizing */
 }
 
 /* Responsive logo */
 @media (max-width:600px){
   header img{
-    height:850px; /* Ogmante 10 fwa soti 85px */
+    height:100px; /* Telefòn */
+    max-width:200px;
   }
 }
 
