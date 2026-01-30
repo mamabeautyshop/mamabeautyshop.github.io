@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mama Beauty | Luxury Beauty & Fashion</title>
+<title>Mama Beauty Shop | Luxury Beauty & Fashion</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -22,7 +22,9 @@ header{
   padding:10px 15px;
   box-shadow:0 2px 10px rgba(0,0,0,.05);
 }
-header img{height:60px}
+header img{
+  height:60px;
+}
 select,input{
   padding:8px 12px;
   border-radius:20px;
@@ -34,9 +36,16 @@ select,input{
   text-align:center;
   padding:80px 20px;
 }
-.hero h1{font-size:32px}
-.section{padding:40px 20px}
-.categories{text-align:center;margin-bottom:20px}
+.hero h1{
+  font-size:32px;
+}
+.section{
+  padding:40px 20px;
+}
+.categories{
+  text-align:center;
+  margin-bottom:20px;
+}
 .categories button{
   background:#d4af37;
   border:none;
@@ -44,6 +53,7 @@ select,input{
   margin:5px;
   border-radius:20px;
   cursor:pointer;
+  font-weight:600;
 }
 .products{
   display:grid;
@@ -57,7 +67,10 @@ select,input{
   text-align:center;
   box-shadow:0 5px 15px rgba(0,0,0,.1);
 }
-.card img{width:100%;border-radius:10px}
+.card img{
+  width:100%;
+  border-radius:10px;
+}
 .card button{
   background:black;
   color:white;
@@ -66,6 +79,7 @@ select,input{
   width:100%;
   border-radius:25px;
   margin-top:10px;
+  cursor:pointer;
 }
 #cart{
   position:fixed;
@@ -76,6 +90,7 @@ select,input{
   border-radius:30px;
   font-weight:bold;
   cursor:pointer;
+  z-index:999;
 }
 footer{
   background:black;
@@ -83,14 +98,32 @@ footer{
   text-align:center;
   padding:30px;
 }
-footer a{color:#d4af37;text-decoration:none}
+footer a{
+  color:#d4af37;
+  text-decoration:none;
+}
+
+/* WhatsApp floating button */
+.whatsapp-float{
+  position:fixed;
+  bottom:90px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  font-size:26px;
+  padding:15px 18px;
+  border-radius:50%;
+  text-decoration:none;
+  box-shadow:0 5px 15px rgba(0,0,0,.3);
+  z-index:999;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-  <img src="logo.png" alt="Mama Beauty Logo">
+  <img src="logo.png" alt="Mama Beauty Shop Logo">
   <select onchange="changeCurrency(this.value)">
     <option value="$">$ USD</option>
     <option value="HTG">HTG</option>
@@ -98,59 +131,64 @@ footer a{color:#d4af37;text-decoration:none}
 </header>
 
 <div style="padding:10px">
-<input placeholder="Search products..." onkeyup="searchProduct(this.value)" style="width:100%">
+  <input placeholder="Search products..." onkeyup="searchProduct(this.value)" style="width:100%">
 </div>
 
 <section class="hero">
-<h1>Luxury Beauty & Fashion for Confident Women</h1>
+  <h1>Mama Beauty Shop</h1>
+  <p>Luxury & Elegance for Confident Women</p>
 </section>
 
 <section class="section">
-<div class="categories">
-<button onclick="filter('all')">All</button>
-<button onclick="filter('beauty')">Beauty</button>
-<button onclick="filter('fashion')">Fashion</button>
-</div>
 
-<div class="products">
+  <div class="categories">
+    <button onclick="filter('all')">All</button>
+    <button onclick="filter('beauty')">Beauty</button>
+    <button onclick="filter('fashion')">Fashion</button>
+  </div>
 
-<div class="card beauty">
-<img src="hair.jpg">
-<h3>Hair Oil</h3>
-<p class="price" data-usd="25">$25</p>
-<button onclick="addToCart('Hair Oil - $25')">Add to Cart</button>
-</div>
+  <div class="products">
 
-<div class="card beauty">
-<img src="skin.jpg">
-<h3>Skin Care Cream</h3>
-<p class="price" data-usd="30">$30</p>
-<button onclick="addToCart('Skin Care Cream - $30')">Add to Cart</button>
-</div>
+    <div class="card beauty">
+      <img src="hair.jpg">
+      <h3>Hair Oil</h3>
+      <p class="price" data-usd="25">$25</p>
+      <button onclick="addToCart('Hair Oil - $25')">Add to Cart</button>
+    </div>
 
-<div class="card beauty">
-<img src="makeup.jpg">
-<h3>Makeup Kit</h3>
-<p class="price" data-usd="45">$45</p>
-<button onclick="addToCart('Makeup Kit - $45')">Add to Cart</button>
-</div>
+    <div class="card beauty">
+      <img src="skin.jpg">
+      <h3>Skin Care Cream</h3>
+      <p class="price" data-usd="30">$30</p>
+      <button onclick="addToCart('Skin Care Cream - $30')">Add to Cart</button>
+    </div>
 
-<div class="card fashion">
-<img src="dress.jpg">
-<h3>Luxury Dress</h3>
-<p class="price" data-usd="80">$80</p>
-<button onclick="addToCart('Luxury Dress - $80')">Add to Cart</button>
-</div>
+    <div class="card beauty">
+      <img src="makeup.jpg">
+      <h3>Makeup Kit</h3>
+      <p class="price" data-usd="45">$45</p>
+      <button onclick="addToCart('Makeup Kit - $45')">Add to Cart</button>
+    </div>
 
-</div>
+    <div class="card fashion">
+      <img src="dress.jpg">
+      <h3>Luxury Dress</h3>
+      <p class="price" data-usd="80">$80</p>
+      <button onclick="addToCart('Luxury Dress - $80')">Add to Cart</button>
+    </div>
+
+  </div>
 </section>
 
 <div id="cart" onclick="checkout()">🛒 Checkout</div>
 
+<!-- WhatsApp direct button -->
+<a href="https://wa.me/15164778676" target="_blank" class="whatsapp-float">💬</a>
+
 <footer>
-<p>Follow us on Instagram</p>
-<a href="https://instagram.com/yourpage" target="_blank">@MamaBeauty</a>
-<p>© 2026 Mama Beauty • Luxury & Elegance</p>
+  <p>Follow us on Instagram</p>
+  <a href="https://instagram.com/mamabeautyshop" target="_blank">@MamaBeautyShop</a>
+  <p>© 2026 Mama Beauty Shop • Luxury & Elegance</p>
 </footer>
 
 <script>
@@ -163,8 +201,11 @@ function addToCart(item){
 }
 
 function checkout(){
-  if(cart.length===0){alert("Your cart is empty");return;}
-  let msg="Hello Mama Beauty,%0AI would like to order:%0A";
+  if(cart.length===0){
+    alert("Your cart is empty");
+    return;
+  }
+  let msg="Hello Mama Beauty Shop,%0AI would like to order:%0A";
   cart.forEach(i=>msg+="- "+i+"%0A");
   window.location.href="https://wa.me/15164778676?text="+msg;
 }
@@ -178,7 +219,8 @@ function filter(cat){
 function searchProduct(val){
   val=val.toLowerCase();
   document.querySelectorAll('.card h3').forEach(h=>{
-    h.parentElement.style.display=h.innerText.toLowerCase().includes(val)?"block":"none";
+    h.parentElement.style.display=
+      h.innerText.toLowerCase().includes(val)?"block":"none";
   });
 }
 
